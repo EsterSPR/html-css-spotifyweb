@@ -11,6 +11,23 @@ nav {
     height: calc(100vh - 100px);
     width: 20%;
     float: left;
+    position: relative;
+}
+
+#nav-container {
+    padding: 10px;
+    height: 50%;
+    width: 100%;
+    background-color: palevioletred;
+}
+
+#profile {
+    width: 100%;
+    padding: 20px;
+    height:100px;
+    position: absolute;
+    bottom: 0;
+    background-color: palevioletred;
 }
 
 /*HEADER*/
@@ -39,4 +56,25 @@ footer {
     height: 100px;
     position: fixed;
     bottom: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-col {
+    height: 100%;
+    background-color: skyblue;
+}
+
+footer .left {
+    width: 20%;
+    text-align: left;
+}
+
+footer .center {
+    width: 40%;
+}
+
+footer .right {
+    width: 20%;
+    text-align: right;
 }
