@@ -160,10 +160,35 @@ header button {
 /*MAIN*/
 
 main {
+    padding-left: 270px;
+    padding-top: 20px;
     background-color: #141922;
     width: 100%;
     height: calc(100vh - 180px);
     position: relative;
+}
+
+/*MAIN-NAV*/
+
+#main-nav {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    color:rgba(255, 255, 255, 0.5);
+    font-size: 11pt;
+}
+
+.main-nav-item {
+    margin: 0 10px;
+}
+
+.main-nav-item hr {
+    width: 40%;
+    margin: 2px auto 0 auto;
+    border-top: 2px solid #ADFF30;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
 }
 
 /*FOOTER*/
