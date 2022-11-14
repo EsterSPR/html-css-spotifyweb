@@ -16,15 +16,20 @@ a {
     text-decoration: none;
 }
 
+button {
+    cursor: pointer;
+}
+
 /*NAV*/
 
 nav {
-    height: calc(100vh - 100px);
+    height: 100vh;
     width: 250px;
     float: left;
     position: absolute;
     background-color: #000;
     z-index: 1;
+    overflow: hidden;
 }
 
 #nav-container {
@@ -34,6 +39,12 @@ nav {
     flex-direction: column;
     color: rgba(255, 255, 255, 0.5);
     font-size: 11pt;
+}
+
+#playlist-container {
+    overflow-y: scroll;
+    height: auto;
+    margin-bottom: 190px;
 }
 
 img[alt="spotify-logo"] {
@@ -47,7 +58,19 @@ img[alt="spotify-logo"] {
     margin: 10px 0;
 }
 
-#nav-container a:nth-child(2) {
+.nav-item:hover {
+    color: #fff
+}
+
+.nav-item:hover img {
+    opacity: 1;
+}
+
+.nav-item:hover #plus-icon {
+    background-color: rgba(255, 255, 255, 1);
+}
+
+#nav-item-active{
     border-left: 2px solid #ADFF30;
     margin-left: -20px;
     padding-left: 18px;
@@ -75,7 +98,7 @@ img[alt="home-icon"] {
     background-color: rgba(255, 255, 255, 0.5);
     font-size: 30px;
     font-weight: bold;
-    padding: 0 10px;
+    padding: 0 11px 2px 11px;
     margin-right: 10px;
 }
 
@@ -83,13 +106,13 @@ img[alt="home-icon"] {
 
 #profile {
     width: 100%;
-    padding: 20px;
+    padding: 5px 20px 10px 20px;
     position: absolute;
-    bottom: 0;
+    bottom: 100px;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    margin-top: 20px;
+    background-color: #000;
 }
 
 #profile a {
@@ -111,6 +134,14 @@ img[alt="download-icon"] {
 #profile-top {
     color: rgba(255, 255, 255, 0.5);
     font-size: 10pt;
+}
+
+#profile-top:hover {
+    color: #fff
+}
+
+#profile-top:hover img {
+    opacity: 1;
 }
 
 #profile hr {
@@ -157,6 +188,10 @@ header button {
     font-weight: bolder;
 }
 
+header button:hover {
+    font-size: 11pt;
+}
+
 /*MAIN*/
 
 main {
@@ -164,7 +199,7 @@ main {
     padding-top: 20px;
     background-color: #141922;
     width: 100%;
-    height: calc(100vh - 180px);
+    height: calc(100vh - 80px);
     position: relative;
 }
 
@@ -182,6 +217,10 @@ main {
     margin: 0 10px;
 }
 
+.main-nav-item:hover {
+    color:rgba(255, 255, 255, 1);
+}
+
 .main-nav-item hr {
     width: 40%;
     margin: 2px auto 0 auto;
@@ -195,26 +234,138 @@ main {
 
 footer {
     background-color: #282828;
+    color: rgba(255, 255, 255, 1);
     width: 100vw;
     height: 100px;
     position: fixed;
     bottom: 0;
     display: flex;
     justify-content: space-between;
+    z-index: 2;
 }
 
 .footer-col {
     height: 100%;
-    background-color: skyblue;
+    padding: 20px;
 }
 
 footer .left {
     width: 25%;
     text-align: left;
+    display: flex;
+    align-items: center;
+}
+
+footer img[alt="sinister"] {
+    height: 60px;
+    margin-right: 10px;
+}
+
+#player-track {
+    font-size: 11pt;
+}
+
+#player-artist {
+    font-size: 10pt;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+#player-track:hover {
+    text-decoration: underline;
+}
+
+#player-artist:hover {
+    text-decoration: underline;
+    color: rgba(255, 255, 255, 1);
+}
+
+.left > p {
+    margin-left: 2vw;
+}
+
+.footer-left-icon {
+    margin: 0 5px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.footer-left-icon:hover {
+    margin: 0 5px;
+    color: rgba(255, 255, 255, 1);
 }
 
 footer .center {
     width: 40%;
+}
+
+.slider { 
+    margin: auto;
+    -webkit-appearance: none;
+    position: relative;
+    overflow: hidden;
+    height: 5px;
+    width: 85%;
+    cursor: pointer;
+    border-radius: 50px; /* iOS */
+}
+
+::-webkit-slider-runnable-track {
+    background:  #5A5A5A;
+    ;
+}
+
+
+::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 10px; 
+    height: 10px;
+    background: #fff;
+    box-shadow: -200px 0 0 200px #fff;
+    border: none; 
+
+}
+
+::-moz-range-track {
+    height: 5px;
+    background: #5A5A5A;
+}
+
+::-moz-range-thumb {
+    width: 10px; 
+    height: 10px;
+    background: #fff;
+    box-shadow: -200px 0 0 200px #fff;
+    border: none; 
+}
+
+::-ms-fill-lower { 
+    background: rgba(255, 255, 255, 1);
+}
+
+::-ms-thumb { 
+    background: #fff;
+    border: none;
+    height: 40px;
+    width: 20px;
+    box-sizing: border-box;
+}
+
+::-ms-ticks-after { 
+    display: none; 
+}
+
+::-ms-ticks-before { 
+    display: none; 
+}
+
+::-ms-track { 
+    background: #ddd;
+    color: transparent;
+    height: 40px;
+    border: none;
+}
+
+::-ms-tooltip { 
+    display: none;
 }
 
 footer .right {

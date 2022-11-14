@@ -13,19 +13,20 @@
     <nav>
         <div id="nav-container">
             <a href="#"> <div id="nav-logo"><img src="./img/logo.svg" alt="spotify-logo"></div> </a>
-            <a href="#"> <div class="nav-item"><img src="./img/home.svg" alt="home-icon"> Home</div> </a>
+            <a href="#" id="nav-item-active"> <div class="nav-item"><img src="./img/home.svg" alt="home-icon"> Home</div> </a>
             <a href="#"> <div class="nav-item"><img src="./img/search.svg" alt="cerca-icon"> Cerca</div> </a>
             <a href="#"> <div class="nav-item"><img src="./img/libreria.svg" alt="libreria-icon"> La tua libreria</div> </a>
             <h4>PLAYLIST</h3>
             <a href="#"> <div class="nav-item"><span id="plus-icon">+</span> Crea Playlist</div> </a>
-            <a href="#"> <div class="nav-item">Nome Playlist</div> </a>
-            <a href="#"> <div class="nav-item">Nome Playlist</div> </a>
-            <a href="#"> <div class="nav-item">Nome Playlist</div> </a>
-            <a href="#"> <div class="nav-item">Nome Playlist</div> </a>
-            <a href="#"> <div class="nav-item">Nome Playlist</div> </a>
-            <a href="#"> <div class="nav-item">Nome Playlist</div> </a>
-            <a href="#"> <div class="nav-item">Nome Playlist</div> </a>
-
+            <div id="playlist-container">
+                <a href="#"> <div class="nav-item">Nome Playlist</div> </a>
+                <a href="#"> <div class="nav-item">Nome Playlist</div> </a>
+                <a href="#"> <div class="nav-item">Nome Playlist</div> </a>
+                <a href="#"> <div class="nav-item">Nome Playlist</div> </a>
+                <a href="#"> <div class="nav-item">Nome Playlist</div> </a>
+                <a href="#"> <div class="nav-item">Nome Playlist</div> </a>
+                <a href="#"> <div class="nav-item">Nome Playlist</div> </a>
+            </div>
         </div>
         <div id="profile">
             <a href="#">  <div id="profile-top"><img src="./img/download.svg" alt="download-icon">Installa app</div> </a>
@@ -35,17 +36,17 @@
     </nav>
 
     <header>
-        <button>EFFETTUA L'UPGRADE</button>
+        <a href="#"><button>EFFETTUA L'UPGRADE</button></a>
     </header>
 
     <main>
         <div id="main-nav">
-            <div class="main-nav-item">IN EVIDENZA <hr></div>
-            <div class="main-nav-item">PODCAST</div>
-            <div class="main-nav-item">CLASSIFICHE</div>
-            <div class="main-nav-item">GENERI E MOOD</div>
-            <div class="main-nav-item">NUOVE USCITE</div>
-            <div class="main-nav-item">SCOPRI</div>
+           <a href="#"> <div class="main-nav-item">IN EVIDENZA <hr></div> </a>
+           <a href="#"> <div class="main-nav-item">PODCAST</div> </a>
+           <a href="#"> <div class="main-nav-item">CLASSIFICHE</div> </a>
+           <a href="#"> <div class="main-nav-item">GENERI E MOOD</div> </a>
+           <a href="#"> <div class="main-nav-item">NUOVE USCITE</div> </a>
+           <a href="#"> <div class="main-nav-item">SCOPRI</div> </a>
         </div>
 
         <section> <!--RECENTLY PLAYED-->
@@ -62,8 +63,20 @@
     </main>
 
     <footer>
-        <div class="footer-col left"></div>
-        <div class="footer-col center"></div>
+        <div class="footer-col left">
+            <img src="./img/sinister.jpeg" alt="sinister">
+            <div>
+                <a href="#" id="player-track"><p><strong>Sinister</strong></p></a>
+                <a href="#" id="player-artist"><p>Brano Nome</p></a>
+            </div>
+            <p> <a href="#" class="footer-left-icon"><i class="fa-regular fa-heart"></i></a> <a href="#" class="footer-left-icon"><i class="fa-regular fa-folder"></i></a> </p>
+        </div>
+        <div class="footer-col center">
+            <div id="player-buttons"></div>
+            <div id="player-timeline">
+                <input type="range" min="1" max="100" value="30" class="slider">
+            </div>
+        </div>
         <div class="footer-col right"></div>
     </footer>
 </body>
