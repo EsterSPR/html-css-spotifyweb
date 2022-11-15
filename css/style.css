@@ -54,6 +54,10 @@ img[alt="spotify-logo"] {
     margin: 10px 0;
 }
 
+img[alt="spotify-logo-small"] {
+    display: none;
+}
+
 .nav-item {
     display: flex;
     align-items: center;
@@ -221,6 +225,7 @@ main {
     width: 100%;
     color:rgba(255, 255, 255, 0.5);
     font-size: 11pt;
+    flex-wrap: wrap;
 }
 
 .main-nav-item {
@@ -253,6 +258,7 @@ main h2 {
     width: 100%;
     display: flex;
     margin-top: 30px;
+    flex-wrap: wrap;
 }
 
 .main-item {
@@ -280,7 +286,7 @@ main h2 {
     font-size: 45pt;
     z-index: 1;
     transition: opacity 0.2s;
-    margin: 33% auto;
+    margin: 33%;
 }
 
 .main-item:hover i {
@@ -444,4 +450,135 @@ footer .right {
     width: 40%;
     display: flex;
     justify-content: right;
+}
+
+@media screen and (max-width: 992px) {
+	.main-item {
+        width: 20%;
+    }
+
+    .main-item i {
+        margin: 30%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+	.main-item {
+        width: 45%;
+    }
+
+    .main-item i {
+        margin: 35%;
+    }
+}
+
+@media screen and (max-width: 576px) {
+
+    nav {
+        width: auto;
+        float: left;
+        position: absolute;
+    }
+    
+    #nav-container {
+        padding: 5px;
+        overflow: hidden;
+    }
+    
+    #playlist-container {
+        display: none;
+    }
+
+    #add-playlist {
+        display: none;
+    }
+    
+    img[alt="spotify-logo"] {
+        display: none;
+    }
+
+    img[alt="spotify-logo-small"] {
+        height: 30px;
+        margin: 10px 5px;
+        display: block;
+    }
+    
+    .nav-item p {
+        display: none;
+    }
+    
+    .nav-item:hover #plus-icon {
+        background-color: rgba(255, 255, 255, 1);
+    }
+    
+    #nav-item-active{
+        border-left: none;
+        margin: 10px auto;
+        padding-left: none;
+    }
+    
+    .nav-item img {
+        margin: -10px auto;
+    }
+    
+    img[alt="home-icon"] {
+        opacity: 1;
+        margin-left: -20px;
+    }
+    
+    #nav-container h4 {
+        display: none;
+    }
+    
+    #plus-icon {
+        display: none;
+    }
+    
+    /*NAV - PROFILE*/
+   
+    img[alt="download-icon"] {
+        margin: 0 auto 0 -3px;
+    }
+
+    #profile-top:hover img {
+        opacity: 1;
+    }
+    
+    #profile hr {
+        display: none;
+    }
+    
+    img[alt="profile-picture"] {
+        margin: 20px auto 0 -6px;
+        height: 23px;
+        padding: 0 2px;
+    }
+    
+    #profile p {
+        display: none;
+    }
+
+    /*header*/
+
+    header {
+        padding: 0 20px 0 70px;
+    }
+
+    /*main*/
+
+    main {
+        padding-left: 70px;
+    }
+
+    .main-nav-item {
+        margin: 0px 10px 20px 0;
+    }
+    
+    .main-item {
+            width: 45%;
+     }
+    
+    .main-item i {
+            margin: 35%;
+    }
 }
