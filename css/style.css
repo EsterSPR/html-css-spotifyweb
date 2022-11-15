@@ -35,15 +35,17 @@ nav {
 #nav-container {
     padding: 10px 20px;
     width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     color: rgba(255, 255, 255, 0.5);
     font-size: 11pt;
+    overflow: hidden;
 }
 
 #playlist-container {
-    overflow-y: scroll;
-    height: auto;
+    height: 100%;
+    overflow-y: auto;
     margin-bottom: 190px;
 }
 
@@ -195,12 +197,20 @@ header button:hover {
 /*MAIN*/
 
 main {
+    color: rgba(255, 255, 255, 1);
     padding-left: 270px;
     padding-top: 20px;
+    padding-bottom: 120px;
     background-color: #141922;
     width: 100%;
     height: calc(100vh - 80px);
     position: relative;
+    overflow-y: hidden;
+}
+
+#main-container {
+    height: 100%;
+    overflow-y: auto;
 }
 
 /*MAIN-NAV*/
@@ -228,6 +238,61 @@ main {
     border-bottom: none;
     border-left: none;
     border-right: none;
+}
+
+main h2 {
+    margin: 30px 0 5px 0;
+}
+
+.subtitle, .artist {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 10pt;
+}
+
+.main-item-container {
+    width: 100%;
+    display: flex;
+    margin-top: 30px;
+}
+
+.main-item {
+    width: 15%;
+    margin: 0 15px 15px 0;
+    text-align: center;
+}
+
+.main-item-img {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+    transition: background-bland-mode 0.3s;
+}
+
+.main-item:hover .main-item-img {
+    background-blend-mode: darken;
+}
+
+.main-item i {
+    opacity: 0;
+    font-size: 45pt;
+    z-index: 1;
+    transition: opacity 0.2s;
+    margin: 33% auto;
+}
+
+.main-item:hover i {
+    opacity: 1;
+}
+
+.track {
+    font-weight: bold;
+}
+
+.rounded {
+    border-radius: 50%;
 }
 
 /*FOOTER*/
@@ -316,78 +381,52 @@ footer .center {
     display: flex;
     justify-content: space-between;
     font-size: 11pt;
+    align-items: center;
 }
 
-.slider { 
-    margin: auto;
-    -webkit-appearance: none;
-    position: relative;
-    overflow: hidden;
+#player-container {
+    width: 85%;
+    display: flex;
+    justify-content: center;
+}
+
+.player-bar {
+    width: 95%;
     height: 5px;
-    width: 80%;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.5);
     cursor: pointer;
-    border-radius: 50px; /* iOS */
 }
 
-::-webkit-slider-runnable-track {
-    background:  #5A5A5A;
-    ;
+.played-bar {
+    width: 30%;
+    height: 100%;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 1);
+    position: relative;
 }
 
-
-::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    width: 10px; 
-    height: 10px;
-    background: #fff;
-    box-shadow: -200px 0 0 200px #fff;
-    border: none; 
-
-}
-
-::-moz-range-track {
-    height: 5px;
-    background: #5A5A5A;
-}
-
-::-moz-range-thumb {
-    width: 10px; 
-    height: 10px;
-    background: #fff;
-    box-shadow: -200px 0 0 200px #fff;
-    border: none; 
-}
-
-::-ms-fill-lower { 
-    background: rgba(255, 255, 255, 1);
-}
-
-::-ms-thumb { 
-    background: #fff;
-    border: none;
-    height: 40px;
-    width: 20px;
-    box-sizing: border-box;
-}
-
-::-ms-ticks-after { 
-    display: none; 
-}
-
-::-ms-ticks-before { 
-    display: none; 
-}
-
-::-ms-track { 
-    background: #ddd;
-    color: transparent;
-    height: 40px;
-    border: none;
-}
-
-::-ms-tooltip { 
+.player-cursor {
     display: none;
 }
+
+.player-bar:hover .played-bar {
+    background-color: #ADFF30;
+}
+
+.player-bar:hover .player-cursor {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    border-radius: 50%;
+    width: 13pt;
+    height: 13pt;
+    background-color: rgba(255, 255, 255, 1);
+    transform: translateY(-50%);
+}
+
+
 
 footer .right {
     width: 25%;
@@ -401,15 +440,8 @@ footer .right {
     font-size: 11pt;
 }
 
-.volume { 
-    margin: auto 0 auto 10px;
-    -webkit-appearance: none;
-    position: relative;
-    overflow: hidden;
-    height: 5px;
+#volume-bar {
     width: 40%;
-    cursor: pointer;
-    border-radius: 50px; /* iOS */
+    display: flex;
+    justify-content: right;
 }
-
-/*img player non visibile in mobile*/
