@@ -263,6 +263,7 @@ main h2 {
 
 .main-item {
     width: 15%;
+    min-width: 160px;
     margin: 0 15px 15px 0;
     text-align: center;
 }
@@ -448,6 +449,7 @@ footer .right {
 
 #volume-bar {
     width: 40%;
+    min-width: 50px;
     display: flex;
     justify-content: right;
 }
@@ -455,6 +457,7 @@ footer .right {
 @media screen and (max-width: 992px) {
 	.main-item {
         width: 20%;
+        min-width: 150px;
     }
 
     .main-item i {
@@ -465,6 +468,7 @@ footer .right {
 @media screen and (max-width: 768px) {
 	.main-item {
         width: 45%;
+        min-width: 200px;
     }
 
     .main-item i {
@@ -581,4 +585,16 @@ footer .right {
     .main-item i {
             margin: 35%;
     }
+
+    /*footer*/
+
+    footer img[alt="sinister"] {
+        max-height: 40px;
+        margin-right: 10px;
+    }
+
+    .right i {
+        margin: 0 5px;
+    }
+    
 }
